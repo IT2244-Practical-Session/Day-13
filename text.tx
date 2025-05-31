@@ -1,0 +1,278 @@
+######################if else
+if (Condition){
+    //body of if statement
+}else{
+    //body of else statement.
+}
+Example enter your age and verify your aligible or not for election voting using if else condition.
+01).
+#include<stdio.h>
+int main(){
+    int age;
+    printf("Enter your Age: ");
+    scanf(%d, &age);
+    if(age>=18){
+      printf("Your voting is eligible");
+    }else{
+      printf("Your voting is not eligible");
+    }
+return 0;
+}
+02).
+//ternay operation
+#include <stdio.h>
+
+int main() {
+    int age;
+
+    // Ask for user input
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    // Ternary operator to check voting eligibility
+    age >= 18 ? printf("You are eligible to vote.\n") : printf("You are not eligible to vote.\n");
+
+    return 0;
+}
+03).
+#include <stdio.h>
+int main(){
+    int num;
+    printf("Enter the number(1-7): ");
+    scanf("%d", &num);
+
+    switch(day){
+        case 1:
+            printf("Monday");
+            break;
+        case 2:
+            printf("Tuesday");
+            break;
+        case 3:
+            printf("Wednesday");
+            break;
+        case 4:
+            printf("Thursday");
+            break;
+        case 5:
+            printf("Friday");
+            break;
+        case 6:
+            printf("Saturday");
+            break;
+        case 7:
+            printf("Monday");
+            break;
+        default:
+            printf("Invalid input");
+            break;
+
+
+    }
+    return 0;
+}
+
+04).
+#include <stdio.h>
+
+int main() {
+    int date, a, b, c, x, y, z;
+
+   
+    printf("Enter your birth date (DD format): ");
+    scanf("%d", &date);
+
+    
+    a = date % 10;              
+    b = date / 10;               
+    c = a + b;                   
+
+    
+    switch(c) {
+        case 1:
+            printf("Lucky\n");
+            break;
+        case 2:
+            printf("Carefully do your work\n");
+            break;
+        case 3:
+            printf("Stronger\n");
+            break;
+        case 4:
+            printf("Happy\n");
+            break;
+        case 5:
+            printf("Can get help\n");
+            break;
+        case 6:
+            printf("Doubt\n");
+            break;
+        case 7:
+            printf("Sad\n");
+            break;
+        case 8:
+            printf("Like\n");
+            break;
+        case 9:
+            printf("Courage\n");
+            break;
+        default:
+            // If result is greater than 9, reduce again by summing the digits
+            x = c % 10;               // Last digit
+            y = c / 10;               // Remaining digit(s)
+            z = x + y;                // Sum the digits again
+
+            // Use switch case again to give the message according to the new sum
+            switch(z) {
+                case 1:
+                    printf("Lucky\n");
+                    break;
+                case 2:
+                    printf("Carefully do your work\n");
+                    break;
+                case 3:
+                    printf("Stronger\n");
+                    break;
+                case 4:
+                    printf("Happy\n");
+                    break;
+                case 5:
+                    printf("Can get help\n");
+                    break;
+                case 6:
+                    printf("Doubt\n");
+                    break;
+                case 7:
+                    printf("Sad\n");
+                    break;
+                case 8:
+                    printf("Like\n");
+                    break;
+                case 9:
+                    printf("Courage\n");
+                    break;
+                default:
+                    printf("Try again!\n");
+                    break;
+            }
+            break;
+    }
+
+    return 0;
+}
+05).
+
+#include <stdio.h>
+
+int main() {
+    int i;
+    int sum = 0;
+    long long factorial = 1;
+
+    // Loop through numbers 1 to 5
+    for(i = 1; i <= 5; i++) {
+        sum += i;  // Add the current number to sum
+        factorial *= i;  // Multiply the current number to the factorial
+    }
+
+    // Print the summation and factorial
+    printf("Summation of numbers from 1 to 5 is: %d\n", sum);
+    printf("Factorial of numbers from 1 to 5 is: %lld\n", factorial);
+
+    return 0;
+}
+
+06).
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long first = 0, second = 1, next;
+
+    // Ask user to input the number of terms
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    // Print the Fibonacci series
+    printf("Fibonacci Series up to %d terms: \n", n);
+
+    // Handle the first two terms
+    if (n >= 1) {
+        printf("%lld ", first);  // Print first term
+    }
+    if (n >= 2) {
+        printf("%lld ", second); // Print second term
+    }
+
+    // Generate and print the next terms
+    for(i = 3; i <= n; i++) {
+        next = first + second;
+        printf("%lld ", next);
+        
+        // Update first and second for the next iteration
+        first = second;
+        second = next;
+    }
+
+    printf("\n");
+    return 0;
+}
+
+07).
+#include <stdio.h>
+
+int main() {
+    int num;
+    long long factorial = 1;  // Using long long to handle larger results
+
+    // Ask user to input a non-negative integer
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    // Check if the number is negative
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        // Calculate factorial
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        // Print the result
+        printf("Factorial of %d is: %lld\n", num, factorial);
+    }
+
+    return 0;
+}
+
+08).
+
+  
+#include <stdio.h>
+
+int main() {
+    int decimal, remainder, binary = 0, place = 1;
+
+    // Ask the user for input
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    // Handle the case when the input is 0
+    if (decimal == 0) {
+        printf("Binary: 0\n");
+        return 0;
+    }
+
+    // Convert the decimal to binary and store it as an integer
+    while (decimal > 0) {
+        remainder = decimal % 2;
+        binary = binary + (remainder * place);
+        decimal = decimal / 2;
+        place = place * 10;  // Move to the next place value (1, 10, 100, etc.)
+    }
+
+    // Print the binary number as an integer
+    printf("Binary: %d\n", binary);
+
+    return 0;
+}
